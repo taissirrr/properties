@@ -2,7 +2,7 @@ spring:
   client:
     serviceUrl:
       defaultZone: http://localhost:9998/eureka/
-    cloud:
+  cloud:
         gateway:
             routes:
                 - id: microservice-projet
