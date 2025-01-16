@@ -1,0 +1,17 @@
+spring:
+    cloud:
+        gateway:
+            routes:
+                - id: microservice-projet
+                  uri: lb://MSProject
+                  predicates:
+                  - Path: /projet/**
+                  filters:
+                  - RewritePath= /projet/(?<path>.*) , /$\{path}
+
+                - id: microservice-user
+                  uri: lb://UserProject
+                  predicates:
+                  - Path: /user/**
+                  filters:
+                  - RewritePath= /utilisateur/(?<path>.*) , /$\{path}
